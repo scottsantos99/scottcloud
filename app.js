@@ -6,8 +6,10 @@ var connectionOptions = {
     pass: 'Qpmz123$'
 };
 
-var db = mongoose.connect('mongod://ec2-13-59-224-224.us-east-2.compute.amazonaws.com:27017/test',
-    connectionOptions);
+var db = mongoose.connect('mongodb://ec2-13-59-53-248.us-east-2.compute.amazonaws.com:27017/test',
+    connectionOptions, function(err) {
+    console.log(err);
+});
 
 console.log(mongoose.connection.readyState);
 
@@ -21,6 +23,7 @@ var restaurantRouter = express.Router();
 
 restaurantRouter.route('/restaurant')
     .get(function(req, res){
+        console.log('calling restaurant.find');
         restaurant.find(function(error, restaurants){
             console.log('starting restaurant find');
             if(err) console.log(err);
