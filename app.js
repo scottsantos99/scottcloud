@@ -6,12 +6,12 @@ var connectionOptions = {
     pass: 'Qpmz123$'
 };
 
-var db = mongoose.connect('mongodb://ec2-13-59-53-248.us-east-2.compute.amazonaws.com:27017/test',
+var db = mongoose.connect('mongodb://ec2-52-14-65-242.us-east-2.compute.amazonaws.com:27017/test',
     connectionOptions, function(err) {
-    console.log(err);
+    console.log('tried to connect, but...' + err);
 });
 
-console.log(mongoose.connection.readyState);
+console.log('mongoose readystate is: ' + mongoose.connection.readyState);
 
 var restaurant = require('./models/restaurantModel');
 
@@ -26,7 +26,7 @@ restaurantRouter.route('/restaurant')
         console.log('calling restaurant.find');
         restaurant.find(function(error, restaurants){
             console.log('starting restaurant find');
-            if(err) console.log(err);
+            if(error) console.log(error);
             else res.json(restaurants);
         }).
         limit(10);
