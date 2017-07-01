@@ -1,12 +1,13 @@
 #!/bin/bash
 
 echo -e "\n\nKilling node"
+cd ~/service
 npm stop
 
 echo -e "\n\nPulling App.js"
-cd scottcloud
+cd ~/scottcloud
 git pull
-cp app.js ../service
-cd ../service
+cp app.js ~/service
+cd ~/service
 npm start
 echo -e "\n\nDone Pulling app.js"
