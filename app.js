@@ -39,5 +39,6 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port, function() {
+    process.title = 'scottcloudservice';
     console.log('Gulp is running on PORT: ' + port);
 });
