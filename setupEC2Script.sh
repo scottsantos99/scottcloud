@@ -27,4 +27,7 @@ nohup xterm -e "$sshConnectionCommandForDb < ./createDataDbScript.sh" &
 sleep 5
 
 echo -e "\n\nSetup service server"
-./setupService.sh "$sshConnectionCommandForService"
+nohup xterm -e "./setupService.sh $sshConnectionCommandForService" &
+
+echo -e "\n\nTest service is up"
+./testService.sh "$serviceDNS"
