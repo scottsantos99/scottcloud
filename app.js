@@ -29,7 +29,7 @@ restaurantRouter.route('/restaurant')
             if(error) console.log(error);
             else res.json(restaurants);
         }).
-        limit(10);
+        limit(107);
     });
 
 app.use('/api', restaurantRouter);
