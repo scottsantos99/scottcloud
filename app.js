@@ -6,7 +6,7 @@ var connectionOptions = {
     pass: 'Qpmz123$'
 };
 
-var db = mongoose.connect('mongodb://ec2-52-14-166-185.us-east-2.compute.amazonaws.com:27017/test',
+var db = mongoose.connect('mongodb://ec2-13-58-152-120.us-east-2.compute.amazonaws.com:27017/test',
     connectionOptions, function(err) {
     console.log('tried to connect, but...' + err);
 });
