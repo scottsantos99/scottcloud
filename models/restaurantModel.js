@@ -11,7 +11,7 @@ var restaurantModel = new Schema({
     borough: String,
     cuisine: String,
     grades: [{
-      date: any,
+      date: Date,
       grade: String,
       score: Number
     }],
