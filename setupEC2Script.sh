@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo -e setting server connection variables...
-serviceDNS=ec2-52-14-196-185.us-east-2.compute.amazonaws.com
-dbDNS=ec2-13-59-203-156.us-east-2.compute.amazonaws.com
+serviceDNS=ec2-52-15-172-28.us-east-2.compute.amazonaws.com
+dbDNS=ec2-13-59-167-244.us-east-2.compute.amazonaws.com
 ec2User=ec2-user
 pathToPemFile=..
 servicePemFileName=sevenseconddelay_db2.pem
@@ -28,7 +28,7 @@ sleep 5
 
 echo -e "\n\nSetup service server"
 nohup xterm -e "./setupService.sh \"$sshConnectionCommandForService\"" &
-sleep 15
+sleep 25
 
 echo -e "\n\nTest service is up"
 ./testService.sh "$serviceDNS"

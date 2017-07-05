@@ -7,16 +7,16 @@ var restaurantModel = new Schema({
         coord: [Number],
         street: String,
         zipcode: String
-  },
-  borough: String,
-  cuisine: String,
-  grades: [{
-      date: Number,
+    },
+    borough: String,
+    cuisine: String,
+    grades: [{
+      date: any,
       grade: String,
       score: Number
-  }],
-  name: String,
-  restaurant_id: String
+    }],
+    name: String,
+    restaurant_id: String
 });
 
 module.exports = mongoose.model('Restaurant', restaurantModel);
