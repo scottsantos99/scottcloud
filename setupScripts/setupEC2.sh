@@ -10,6 +10,9 @@ dbPemFileName=sevenseconddelay_actualDb.pem
 sshConnectionCommandForService="ssh -tt -i $pathToPemFile/$servicePemFileName $ec2User@$serviceDNS 'bash -s'"
 sshConnectionCommandForDb="ssh -tt -i $pathToPemFile/$dbPemFileName $ec2User@$dbDNS 'bash -s'"
 
+echo -e "\n\nStarting website build..."
+xterm -e ./buildWebserverCode.sh &
+
 echo -e "\n\nStopping db using:\n $sshConnectionCommandForDb"
 nohup xterm -e "$sshConnectionCommandForDb < ./stopDbScript.sh" &
 sleep 5
