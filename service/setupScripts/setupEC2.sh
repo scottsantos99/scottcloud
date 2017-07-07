@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo -e setting server connection variables...
-serviceDNS=ec2-13-59-216-11.us-east-2.compute.amazonaws.com
-dbDNS=ec2-13-59-220-254.us-east-2.compute.amazonaws.com
+serviceDNS=ec2-52-15-176-2.us-east-2.compute.amazonaws.com
+dbDNS=ec2-13-59-157-44.us-east-2.compute.amazonaws.com
 ec2User=ec2-user
 pathToPemFile=../..
 servicePemFileName=sevenseconddelay_db2.pem
