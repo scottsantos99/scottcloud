@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Committing files"
-./commitPushFiles.sh
+./pushServiceFiles.sh
 sshConnectionCommandForService="$1"
 echo -e "\n\nPulling app.js using: $sshConnectionCommandForService"
 sleep 5
