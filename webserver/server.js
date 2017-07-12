@@ -15,5 +15,6 @@ app.get('/', function(req, res) {
 });
 
 app.listen(port, function(err) {
+    process.title = 'scottwebapp';
     console.log('running of port:' + port);
 })

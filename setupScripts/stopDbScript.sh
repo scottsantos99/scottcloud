@@ -4,5 +4,8 @@
 #./mongodb/bin/mongo --eval "db.stats()"
 #statsResult=$?
 #echo -e "$statsResult"
-./mongodb/bin/mongo --eval "db=db.getSiblingDB('admin');db.shutdownServer()"
-echo "done stopping db"
+#if ./mongodb/bin/mongo --eval "db.stats()"; then
+    #: 
+    ./mongodb/bin/mongo --eval "db=db.getSiblingDB('admin');db.shutdownServer()"
+#fi
+echo -e "done stopping db"
